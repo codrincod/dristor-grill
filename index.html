@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Dristor Grill - Romanian Shawarma Peterborough | Shaorma Românească</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper for carousels -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <!-- Custom scrollbar -->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@5.3.6/dist/simplebar.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax-js/3.1.0/parallax.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+    <div class="noise-overlay"></div>
+    
+    <canvas id="bg-canvas"></canvas>
+    <nav>
+        <div class="logo" onclick="switchSection('home')" style="cursor: pointer;">
+            <img src="images/logo.png" alt="Dristor Grill Peterborough" class="logo-img">
+            Dristor Grill Peterborough
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-buttons">
+            <button class="nav-btn active" data-section="home">
+                <span data-en="Home" data-ro="Acasă">Home</span>
+            </button>
+            <button class="nav-btn" data-section="products">
+                <span data-en="Our Menu" data-ro="Meniul Nostru">Our Menu</span>
+            </button>
+            <button class="nav-btn" data-section="about">
+                <span data-en="About Us" data-ro="Despre Noi">About Us</span>
+            </button>
+            <button class="nav-btn" data-section="contact">
+                <span data-en="Contact Us" data-ro="Contact">Contact Us</span>
+            </button>
+            <button class="nav-btn" data-section="legal">
+                <span data-en="Legal Info" data-ro="Informații Legale">Legal Info</span>
+            </button>
+        </div>
+        <div class="language-switch">
+            <button onclick="switchLanguage('en')" class="active">
+                <img src="images/uk-flag.png" alt="English" class="flag-icon">EN
+            </button>
+            <button onclick="switchLanguage('ro')">
+                <img src="images/ro-flag.png" alt="Romanian" class="flag-icon">RO
+            </button>
+        </div>
+    </nav>
+
+    <div id="home" class="section active">
+        <header class="hero">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 data-en="Authentic Romanian Shawarma" data-ro="Shaorma Românească Autentică">Authentic Romanian Shawarma</h1>
+                <p data-en="Experience the true taste of Romanian street food in Peterborough" data-ro="Experimentează gustul autentic al mâncării stradale românești în Peterborough">Experience the true taste of Romanian street food in Peterborough</p>
+                <button class="cta-button" onclick="switchSection('products')" data-en="View Our Menu" data-ro="Vezi Meniul">View Our Menu</button>
+            </div>
+        </header>
+    </div>
+
+    <div id="products" class="section">
+        <div class="products-container">
+            <h2 class="section-title" data-aos="fade-down">Our Menu</h2>
+            
+            <div class="category">
+                <h3 data-aos="fade-right" data-en="Shawarma Selection" data-ro="Selecție de Shaorma">Shawarma Selection</h3>
+                <div class="swiper menu-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="menu-item" data-aos="fade-up">
+                                <div class="menu-item-image">
+                                    <img src="images/chicken-shawarma.jpg" alt="Chicken Shawarma">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h4>Shawarma de Pui / Chicken Shawarma</h4>
+                                    <p data-en="Tender chicken, fresh vegetables, and our secret sauce" data-ro="Pui fraged, legume proaspete și sosul nostru secret">Tender chicken, fresh vegetables, and our secret sauce</p>
+                                    <span class="price">£7.99</span>
+                                    <button class="order-btn" data-en="Order Now" data-ro="Comandă">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="menu-item" data-aos="fade-up">
+                                <div class="menu-item-image">
+                                    <img src="images/beef-shawarma.jpg" alt="Beef Shawarma">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h4>Shawarma de Vită / Beef Shawarma</h4>
+                                    <p data-en="Premium beef with traditional spices" data-ro="Carne de vită premium cu condimente tradiționale">Premium beef with traditional spices</p>
+                                    <span class="price">£8.99</span>
+                                    <button class="order-btn" data-en="Order Now" data-ro="Comandă">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="menu-item" data-aos="fade-up">
+                                <div class="menu-item-image">
+                                    <img src="images/mix-shawarma.jpg" alt="Mix Shawarma">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h4>Shawarma Mixtă / Mix Shawarma</h4>
+                                    <p data-en="Best of both worlds - chicken and beef mix" data-ro="Cea mai bună combinație - mix de pui și vită">Best of both worlds - chicken and beef mix</p>
+                                    <span class="price">£9.99</span>
+                                    <button class="order-btn" data-en="Order Now" data-ro="Comandă">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3 data-en="Side Dishes" data-ro="Garnituri">Side Dishes</h3>
+                <div class="menu-grid">
+                    <!-- Add side dishes items here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <h2 data-en="About Us" data-ro="Despre Noi">About Us</h2>
+        <!-- Add your about content here -->
+    </div>
+
+    <div id="contact" class="section">
+        <section class="contact">
+            <h2 data-en="Find Us" data-ro="Unde ne găsiți">Find Us</h2>
+            <div class="contact-info">
+                <p data-en="Address:" data-ro="Adresa:">Address:</p>
+                <p>123 Main Street, Peterborough, UK</p>
+                <p data-en="Phone:" data-ro="Telefon:">Phone:</p>
+                <p>+44 1234 567890</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="legal" class="section">
+        <h2 data-en="Legal Information" data-ro="Informații Legale">Legal Information</h2>
+        <div class="legal-content">
+            <h3 data-en="Food Safety" data-ro="Siguranța Alimentară">Food Safety</h3>
+            <p data-en="We comply with all UK food safety regulations..." data-ro="Respectăm toate reglementările UK privind siguranța alimentară...">We comply with all UK food safety regulations...</p>
+            <!-- Add more legal content here -->
+        </div>
+    </div>
+
+    <footer>
+        <p data-en="Opening Hours:" data-ro="Program:">Opening Hours:</p>
+        <p data-en="Monday - Sunday: 11:00 - 23:00" data-ro="Luni - Duminică: 11:00 - 23:00">Monday - Sunday: 11:00 - 23:00</p>
+    </footer>
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/simplebar@5.3.6/dist/simplebar.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
