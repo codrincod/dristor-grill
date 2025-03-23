@@ -1075,3 +1075,32 @@ footer {
         padding: 0.5rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .mobile-menu-btn {
+        order: -1;
+        grid-column: 1;
+    }
+
+    .logo {
+        grid-column: 2;
+        font-size: 1rem;
+        margin: 0;
+        text-align: left;
+        padding-right: 70px; /* Make space for language buttons */
+    }
+
+    .language-switch {
+        grid-column: 3;
+        position: static;
+        margin: 0;
+    }
+}
