@@ -13,7 +13,9 @@ function switchLanguage(lang) {
     });
 }
 
+// Update switchSection function to close mobile menu
 function switchSection(sectionId) {
+    // Existing section switching code
     document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
     });
@@ -23,6 +25,13 @@ function switchSection(sectionId) {
     
     document.getElementById(sectionId).classList.add('active');
     document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+
+    // Close mobile menu when section changes
+    const navButtons = document.querySelector('.nav-buttons');
+    const menuBtn = document.querySelector('.mobile-menu-btn i');
+    navButtons.classList.remove('show');
+    menuBtn.classList.remove('fa-times');
+    menuBtn.classList.add('fa-bars');
 
     gsap.from(`#${sectionId}`, {
         opacity: 0,
