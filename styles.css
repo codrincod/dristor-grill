@@ -1214,3 +1214,60 @@ footer {
         opacity: 1; /* Ensure flags are visible */
     }
 }
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        height: 60px;
+    }
+
+    .mobile-menu-btn {
+        grid-column: 1;
+        padding: 0.25rem;
+    }
+
+    .logo {
+        grid-column: 2;
+        font-size: 1.2rem;
+        padding-right: 80px;
+        transform: translateX(-35px); /* Move text more to the left */
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-img {
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+        display: inline-block !important; /* Force display */
+        opacity: 1 !important; /* Ensure visibility */
+        margin-right: 0.5rem;
+    }
+
+    .language-switch {
+        grid-column: 3;
+        display: flex;
+        flex-direction: column-reverse; /* Stack EN under RO */
+        gap: 0.25rem;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.25rem;
+    }
+
+    .language-switch button {
+        padding: 0.25rem 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .flag-icon {
+        width: 16px;
+        height: 12px;
+        display: inline-block;
+    }
+}
