@@ -1047,3 +1047,31 @@ footer {
         transition: none !important;
     }
 }
+
+/* Mobile Menu Adjustments */
+@media screen and (max-width: 768px) {
+    .mobile-menu-btn {
+        order: -1; /* Move to the start */
+        margin-right: 1rem;
+    }
+
+    .logo {
+        order: 0;
+        margin: 0 auto 0 0; /* Push logo to center-left */
+    }
+
+    .language-switch {
+        order: 1;
+        position: fixed;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    /* Adjust nav layout */
+    nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.5rem;
+    }
+}
