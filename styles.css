@@ -143,6 +143,8 @@ nav {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     text-align: center;
+    white-space: nowrap; /* Keep title on one line */
+    overflow: hidden; /* Prevent overflow */
 }
 
 .hero p {
@@ -876,6 +878,7 @@ footer {
     .hero h1 {
         font-size: 2rem;
         margin-bottom: 1rem;
+        white-space: normal; /* Allow wrapping on mobile */
     }
 
     .hero p {
@@ -1154,5 +1157,60 @@ footer {
         height: 15px;
         object-fit: contain;
         display: block; /* Ensure flags are visible */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        height: 60px;
+    }
+
+    .mobile-menu-btn {
+        grid-column: 1;
+        padding: 0.25rem;
+        margin-right: 0.5rem;
+    }
+
+    .logo {
+        grid-column: 2;
+        font-size: 1.2rem; /* Keep original size */
+        padding-right: 100px; /* More space for language buttons */
+        white-space: nowrap;
+        overflow: visible; /* Allow text to be fully visible */
+        transform: translateX(-20px); /* Move text left */
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+        display: block;
+        margin-right: 0.5rem;
+        visibility: visible; /* Ensure logo is visible */
+    }
+
+    .language-switch {
+        grid-column: 3;
+        display: flex;
+        position: absolute;
+        right: 0.5rem;
+        gap: 0.25rem;
+        z-index: 100;
+    }
+
+    .language-switch button {
+        padding: 0.25rem 0.5rem;
+        opacity: 1; /* Ensure buttons are visible */
+    }
+
+    .flag-icon {
+        width: 16px;
+        height: 12px;
+        display: inline-block;
+        opacity: 1; /* Ensure flags are visible */
     }
 }
