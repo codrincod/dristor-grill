@@ -1237,6 +1237,7 @@ footer {
         transform: translateX(-35px); /* Move text more to the left */
         display: flex;
         align-items: center;
+        gap: 0.25rem; /* Reduce space between logo and text */
     }
 
     .logo-img {
@@ -1254,7 +1255,7 @@ footer {
         flex-direction: column-reverse; /* Stack EN under RO */
         gap: 0.25rem;
         position: absolute;
-        right: 0.5rem;
+        right: 1.5rem; /* Move language buttons more to the left */
         top: 0.25rem;
     }
 
@@ -1263,6 +1264,7 @@ footer {
         display: flex;
         align-items: center;
         gap: 0.25rem;
+        min-width: 60px; /* Make sure RO/EN text is visible */
     }
 
     .flag-icon {
